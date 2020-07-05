@@ -1,0 +1,8 @@
+﻿  ModalModel.cpp
+  ModalShape.cpp
+  Sound.cpp
+  Source.cpp
+  正在生成代码...
+D:\Users\gen_sound\gen_sound\gen_sound\Sound.cpp(114,65): warning C4244:  “+=”: 从“double”转换到“sf::Int16”，可能丢失数据
+  LINK : 没有找到 D:\Users\gen_sound\gen_sound\x64\Debug\gen_sound.exe 或上一个增量链接没有生成它；正在执行完全链接
+  gen_sound.vcxproj -> D:\Users\gen_sound\gen_sound\x64\Debug\gen_sound.exe
