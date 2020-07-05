@@ -49,3 +49,22 @@ reading finishedreading obj-1.mass.spm
 reading finishedEigen Value calculated.s
 ```
 这样就得到了.ev文件。
+
+### 实时合成
+这部分我们离开Linux虚拟机，在Windows环境下进行。
+VS项目的环境依赖如下（根据自己安装依赖的位置调整）：
+```
+#项目属性 → C/C++ → 附加包含目录：
+D:\Users\SFML-2.5.1\include
+D:\Users\eigen3
+D:\Users\OpenAL\include
+
+# 项目属性 → 链接器 → 附加库目录：
+D:\Users\SFML-2.5.1\lib
+D:\Users\OpenAL\libs\Win64
+D:\Users\OpenAL\libs\Win32
+```
+主函数在Source.cpp，调整生成目标为exe时，注释掉`# define _DLLExport __declspec (dllexport)` 和 `*extern "C" int _DLLExport USound(int obj, int mat, double force)`可以调试程序。反之，调整生成目标文dll时，保留上述两部分，即可生成dll。
+
+### Unity部分
+基本上没有环境依赖。VS合成的DLL放入Plugins文件夹下，并且注意startcpp中的dll名称对应，以及入口函数名称对应。
